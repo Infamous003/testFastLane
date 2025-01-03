@@ -1,0 +1,17 @@
+:root {
+  --primary-black-color: #161616;
+  --primary-red-color: brown;
+  --primary-white-color: #fafafa;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header, main, footer {
+  width: 100%;
+}
+
+header {
+  background-color: var(--primary-color);
+}
