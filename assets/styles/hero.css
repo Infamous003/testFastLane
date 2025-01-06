@@ -1,14 +1,8 @@
-*{
-  box-sizing: border-box;
-}
-
 .main-container {
   background-color: var(--primary-white-color);
 }
 
 .hero {
-  width: 80%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items:center;

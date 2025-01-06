@@ -4,6 +4,20 @@
   --primary-white-color: #fafafa;
 }
 
+.about-section,
+.hero,
+.nav-container,
+.services-container,
+.footer .container,
+.faq .container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+*{
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -18,4 +32,8 @@ header, main, footer {
 
 header {
   background-color: var(--primary-color);
+}
+
+#paragraph {
+  font-size: 1rem;
 }
