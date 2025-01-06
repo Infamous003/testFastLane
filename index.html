@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="./assets/styles/services.css">
   <link rel="stylesheet" href="./assets/styles/footer.css">
   <link rel="stylesheet" href="./assets/styles/about.css">
+  <link rel="stylesheet" href="./assets/styles/faq.css">
+
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
@@ -30,8 +32,8 @@
       <div class="navbar-links">
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </div>
@@ -55,7 +57,7 @@
       </div>
     </div>
 
-    <div class="services-container">
+    <div class="services-container" id="services">
       <h2>Our Services</h2>
       <div class="service-card">
         <!-- <div class="icon-container">
@@ -124,7 +126,7 @@
       </div>
     </div>
 
-    <div class="about-section">
+    <div class="about-section" id="about">
       <h2>About Us</h2>
       <div class="container">
         <p class="description">
@@ -136,6 +138,48 @@
         <!-- <div class="location-container">
           <a href="#" class="location">You can find us here</a>
         </div> -->
+      </div>
+    </div>
+
+    <div class="faq-container">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="false">
+            <span class="accordion-title">Where are you?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              I'm almost at the finish line so I cant stop now. All I got is gallon in the gas tank! I'm almost at the finish line so I cant stop now, I really got nowhere Im heading just enjoying the ride...
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title">How expensive are parts?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              How expensive do YOU want 'em to be?
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">How reliable are we?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Can you see an 'R' in FastLane? ye...JK...yes we are reliable
+              Trust me brothaaa
+            </p>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </main>
@@ -175,11 +219,26 @@
   <script>
     const toggleMenuBtn = document.querySelector(".toggle-menu-btn");
     const navBarLinks = document.querySelector(".navbar-links");
-
+    const items = document.querySelectorAll('.accordion button');
+    
     toggleMenuBtn.addEventListener("click", () => {
       navBarLinks.classList.toggle("active");
       toggleMenuBtn.classList.toggle("active");
     });
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute('aria-expanded');
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute('aria-expanded', 'false');
+      }
+
+      if (itemToggle == 'false') {
+        this.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    items.forEach((item) => item.addEventListener('click', toggleAccordion));
 
   </script>
 </body>
